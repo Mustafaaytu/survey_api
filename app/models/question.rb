@@ -25,5 +25,4 @@ class Question < ApplicationRecord
   enum type: %i[text choice]
 
   validates :title, presence: true, length: { minimum: 3 }
-  validates :type, inclusion: { in: %i[text choice] }
 end

@@ -37,9 +37,5 @@ class QuestionTest < ActiveSupport::TestCase
       should validate_presence_of(:title)
       should_not allow_value(' ').for(:title)
     end
-
-    context 'for type' do
-      should define_enum_for(:type).with_values(choice: 1, text: 0)
-    end
   end
 end
