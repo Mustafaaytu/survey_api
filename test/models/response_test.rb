@@ -19,7 +19,25 @@
 require "test_helper"
 
 class ResponseTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  context 'database scheme' do
+    should have_db_column(:id).of_type(:uuid).with_options(null: false)
+    should have_db_column(:body).of_type(:text)
+    should have_db_column(:feedback_id).of_type(:uuid)
+    should have_db_column(:option_id).of_type(:uuid)
+    should have_db_column(:question_id).of_type(:uuid)
+    should have_db_column(:created_at).of_type(:datetime).with_options(null: false)
+    should have_db_column(:updated_at).of_type(:datetime).with_options(null: false)
+    should have_db_index(:feedback_id)
+    should have_db_index(:option_id)
+    should have_db_index(:question_id)
+  end
+
+  context 'associations' do
+    should belong_to(:feedback)
+    should belong_to(:option)
+    should belong_to(:question)
+  end
+
+  context 'attributes' do
+  end
 end
