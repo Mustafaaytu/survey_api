@@ -17,10 +17,13 @@
 #
 class Question < ApplicationRecord
   has_many :options, dependent: :destroy
-  has_one :response
+  has_many :responses, dependent: :destroy
   belongs_to :survey
 
   self.inheritance_column = :_type_disabled
 
   enum type: %i[text choice]
+
+  validates :title, presence: true, length: { minimum: 3 }
+  validates :type, inclusion: { in: %i[text choice] }
 end
