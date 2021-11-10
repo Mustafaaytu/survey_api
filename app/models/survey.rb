@@ -13,4 +13,6 @@ class Survey < ApplicationRecord
   has_many :questions, dependent: :destroy
   has_many :feedbacks, dependent: :destroy
   has_many :responses, through: :questions, dependent: :destroy
+
+  validates :name, presence: true, length: { minimum: 3 }
 end
