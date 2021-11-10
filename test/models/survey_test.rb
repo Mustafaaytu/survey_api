@@ -32,6 +32,4 @@ class SurveyTest < ActiveSupport::TestCase
       should_not allow_value(' ').for(:name)
     end
   end
-
-
 end

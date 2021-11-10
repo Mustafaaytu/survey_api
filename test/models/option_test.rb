@@ -12,7 +12,7 @@
 #
 #  index_options_on_question_id  (question_id)
 #
-require "test_helper"
+require 'test_helper'
 
 class OptionTest < ActiveSupport::TestCase
   context 'database scheme' do
@@ -26,6 +26,7 @@ class OptionTest < ActiveSupport::TestCase
 
   context 'associations' do
     should belong_to(:question)
+    should have_many(:responses).dependent(:destroy)
   end
 
   context 'validation' do

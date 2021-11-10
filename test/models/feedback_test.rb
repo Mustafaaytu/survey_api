@@ -11,7 +11,7 @@
 #
 #  index_feedbacks_on_survey_id  (survey_id)
 #
-require "test_helper"
+require 'test_helper'
 
 class FeedbackTest < ActiveSupport::TestCase
   context 'database scheme' do
@@ -24,8 +24,5 @@ class FeedbackTest < ActiveSupport::TestCase
 
   context 'associations' do
     should belong_to(:survey)
-  end
-
-  context 'attributes' do
   end
 end

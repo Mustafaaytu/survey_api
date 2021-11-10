@@ -37,7 +37,4 @@ class ResponseTest < ActiveSupport::TestCase
     should belong_to(:option)
     should belong_to(:question)
   end
-
-  context 'attributes' do
-  end
 end

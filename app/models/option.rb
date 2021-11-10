@@ -15,7 +15,7 @@
 #  index_options_on_question_id  (question_id)
 #
 class Option < ApplicationRecord
-  has_one :response
+  has_many :responses, dependent: :destroy
   belongs_to :question
 
   validates :title, presence: true, length: { minimum: 3 }
