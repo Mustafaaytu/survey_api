@@ -17,4 +17,6 @@
 class Option < ApplicationRecord
   has_one :response
   belongs_to :question
+
+  validates :title, presence: true, length: { minimum: 3 }
 end
