@@ -8,8 +8,8 @@
 #  updated_at :datetime         not null
 #
 
-one:
+survey_one:
   name: MyText
 
-two:
+survey_two:
   name: MyText

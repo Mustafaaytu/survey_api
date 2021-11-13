@@ -17,8 +17,14 @@
 #  index_responses_on_question_id  (question_id)
 #
 
-one:
+response_one:
   body: MyText
+  feedback: feeedback_one
+  question: question_one
+  option: option_one
 
-two:
+response_two:
   body: MyText
+  feedback: feeedback_two
+  question: question_two
+  option: option_two

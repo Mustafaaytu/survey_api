@@ -16,8 +16,9 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+feedback_one:
+  survey: survey_one
 # column: value
 #
-two: {}
+feedback_two: {}
 # column: value
