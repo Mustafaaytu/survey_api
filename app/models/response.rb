@@ -20,6 +20,11 @@
 #
 class Response < ApplicationRecord
   belongs_to :question
-  belongs_to :option
+  belongs_to :option, optional: true
   belongs_to :feedback
+
+  validates :body,      presence: { message: 'Survey question type is a text. Your answer not exist.' },
+                        if: -> { question.presence.text? }
+  validates :option_id, presence: { message: 'Survey question type is a choice. Your answer not a choice' },
+                        if: -> { question.presence.choice? }
 end
