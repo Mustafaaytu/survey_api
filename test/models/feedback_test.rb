@@ -24,5 +24,7 @@ class FeedbackTest < ActiveSupport::TestCase
 
   context 'associations' do
     should belong_to(:survey)
+    should accept_nested_attributes_for(:responses)
+    should have_many(:responses).dependent(:destroy)
   end
 end

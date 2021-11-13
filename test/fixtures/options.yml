@@ -13,8 +13,10 @@
 #  index_options_on_question_id  (question_id)
 #
 
-one:
+option_one:
   title: MyText
+  question: question_one
 
-two:
+option_two:
   title: MyText
+  question: question_two

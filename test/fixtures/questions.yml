@@ -14,10 +14,10 @@
 #  index_questions_on_survey_id  (survey_id)
 #
 
-one:
-  title: MyText
-  type: 1
+question_one:
+  title: Question 1
+  type: 0
 
-two:
+question_two:
   title: MyText
   type: 1
