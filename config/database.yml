@@ -15,9 +15,11 @@
 # gem 'pg'
 #
 default: &default
-  host: localhost
+  host: <%= ENV.fetch('DB_HOST', 'db') %>
   adapter: postgresql
   encoding: unicode
+  username: <%= ENV.fetch('DB_USER', 'postgres') %>
+  password: <%= ENV.fetch('DB_PASS', 'password') %>
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -25,8 +27,6 @@ default: &default
 development:
   <<: *default
   database: survey_api_development
-  username: survey_api
-  password: '12345678'
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -60,8 +60,6 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  username: survey_api
-  password: '12345678'
   database: survey_api_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
@@ -87,6 +85,4 @@ test:
 production:
   <<: *default
   database: survey_api_production
-  username: survey_api
-  password: '12345678'
   #password: <%= ENV['SURVEY_API_DATABASE_PASSWORD'] %>
